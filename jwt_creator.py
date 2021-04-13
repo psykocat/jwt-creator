@@ -35,7 +35,7 @@ def decode_payload(payload_encoded, secret, algorithm, insecure_check=False):
     except jwt.exceptions.DecodeError as e:
         logging.error("Wrong token format provided")
         sys.exit(1)
-    return output
+    return json.dumps(output)
 
 def encode_payload(payload_txt, secret, algorithm):
     """Generate and validate the payload"""
